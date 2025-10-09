@@ -13,7 +13,21 @@ return new class extends Migration
     {
         Schema::create('taskers', function (Blueprint $table) {
             $table->id();
+            $table->string('full_name');
+            $table->string('email')->unique();
+            $table->string('profile_pic')->nullable();
+            $table->string('job_title');
+            $table->string('cost');
+            $table->string('work_time');
+            $table->string('description')->nullable();
+            $table->float('total_rate')->default(0);
+            $table->float('work_quality')->default(0);
+            $table->float('reliability')->default(0);
+            $table->float('punctuality')->default(0);
+            $table->float('solution')->default(0);
+            $table->float('payout')->default(0);
             $table->timestamps();
+
         });
     }
 
