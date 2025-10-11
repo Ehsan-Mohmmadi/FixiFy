@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('profile_pic')->nullable();
             $table->string('job_title');
             $table->string('cost');
-            $table->string('work_time');
+            $table->string('work_time')->nullable();
             $table->string('description')->nullable();
             $table->float('total_rate')->default(0);
             $table->float('work_quality')->default(0);
