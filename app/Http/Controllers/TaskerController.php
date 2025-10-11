@@ -9,6 +9,12 @@ class TaskerController extends Controller
 {
     public function add(Request $request)
     {
-        Tasker::create(($request->all()));
+       $tasker = Tasker::create($request->all());
+       return response()->json(
+           [
+               'message' => 'Tasker added successfully',
+               'data' => $tasker
+           ],200
+       );
     }
 }

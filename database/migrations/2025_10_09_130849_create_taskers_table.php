@@ -20,12 +20,12 @@ return new class extends Migration
             $table->string('cost');
             $table->string('work_time')->nullable();
             $table->string('description')->nullable();
-            $table->float('total_rate')->default(0);
-            $table->float('work_quality')->default(0);
-            $table->float('reliability')->default(0);
-            $table->float('punctuality')->default(0);
-            $table->float('solution')->default(0);
-            $table->float('payout')->default(0);
+            $table->float('total_rate')->nullable();
+            $table->float('work_quality')->nullable();
+            $table->float('reliability')->nullable();
+            $table->float('punctuality')->nullable();
+            $table->float('solution')->nullable();
+            $table->float('payout')->nullable();
             $table->timestamps();
 
         });
