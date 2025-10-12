@@ -16,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('/tasker/add',[TaskerController::class,'add']);
-
+Route::get('/tasker/{tasker}/show',[TaskerController::class,'show']);
+Route::put('/tasker/{tasker}/update',[TaskerController::class,'update']);
 /*Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });*/

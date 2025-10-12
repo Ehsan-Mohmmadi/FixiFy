@@ -17,4 +17,16 @@ class TaskerController extends Controller
            ],200
        );
     }
+
+    public function show(Tasker $tasker)
+    {
+        return response()->json([
+           "message" => "Tasker retrieved",
+            "data" => $tasker
+        ]);
+    }
+
+    public function update(Tasker $tasker, Request $request){
+        dd($tasker);
+    }
 }
