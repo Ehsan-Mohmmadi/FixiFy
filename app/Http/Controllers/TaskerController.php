@@ -27,6 +27,12 @@ class TaskerController extends Controller
     }
 
     public function update(Tasker $tasker, Request $request){
-        dd($tasker);
+
+        $tasker->update(request()->all());
+        $tasker = Tasker::find($tasker->id);
+        return response()->json([
+            "message" => "Tasker updated successfully",
+            "data" => $tasker
+        ],200);
     }
 }
