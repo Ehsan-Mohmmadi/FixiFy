@@ -35,6 +35,5 @@ class TaskerController extends Controller
             'message' => 'Data updated',
             'Data' => $tasker
         ],200);
-
     }
 }
