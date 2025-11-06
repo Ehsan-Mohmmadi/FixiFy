@@ -33,3 +33,8 @@ Route::post('/logout',[UserController::class,'logout']);
 
 //Task Routes
 Route::post('/task/add', [TaskController::class, 'add']);
+
+
+//product
+
+Route::post('/product/store',[\App\Http\Controllers\ProductController::class,'store']);
