@@ -41,3 +41,6 @@ Route::post('/product/store',[\App\Http\Controllers\ProductController::class,'st
 
 //Admin
 Route::post('/admin/store',[\App\Http\Controllers\AdminController::class,'store']);
+Route::middleware('auth:sanctum')->group(function(){
+    Route::get('/admin/{admin}/show',[\App\Http\Controllers\AdminController::class,'show']);
+});
