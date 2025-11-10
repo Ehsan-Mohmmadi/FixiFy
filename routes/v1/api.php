@@ -36,5 +36,8 @@ Route::post('/task/add', [TaskController::class, 'add']);
 
 
 //product
-
 Route::post('/product/store',[\App\Http\Controllers\ProductController::class,'store']);
+
+
+//Admin
+Route::post('/admin/store',[\App\Http\Controllers\AdminController::class,'store']);
