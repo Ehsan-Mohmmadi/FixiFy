@@ -61,7 +61,7 @@ class UserController extends Controller
     }
 
     public function userShow(User $user){
-        response()->json([
+        return response()->json([
            'message' => 'Data retrieved successfully',
            'data' => new UserResource($user)
         ],200);
