@@ -33,6 +33,7 @@ Route::put('/tasker/{tasker}/update', [TaskerController::class, 'update']);
 
 //User Routes
 Route::post('/user/add', [UserController::class, 'userAdd']);
+Route::get('/user/{user}/show', [UserController::class, 'userShow']);
 
 //Task Routes
 Route::post('/task/add', [TaskController::class, 'add']);
