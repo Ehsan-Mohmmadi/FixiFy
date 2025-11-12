@@ -27,9 +27,12 @@ Route::get('/tasker/{tasker}/show', [TaskerController::class, 'show']);
 Route::put('/tasker/{tasker}/update', [TaskerController::class, 'update']);
 
 //Authentication Routes
-Route::post('/register',[UserController::class,'register']);
-Route::post('/login',[UserController::class,'login']);
-Route::post('/logout',[UserController::class,'logout']);
+//Route::post('/register',[UserController::class,'register']);
+//Route::post('/login',[UserController::class,'login']);
+//Route::post('/logout',[UserController::class,'logout']);
+
+//User Routes
+Route::post('/user/add', [UserController::class, 'userAdd']);
 
 //Task Routes
 Route::post('/task/add', [TaskController::class, 'add']);
