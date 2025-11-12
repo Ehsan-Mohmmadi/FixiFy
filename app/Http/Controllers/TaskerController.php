@@ -2,21 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TaskerRequest;
+use App\Http\Resources\TaskerResource;
 use App\Models\Tasker;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TaskerController extends Controller
 {
-    public function add(Request $request)
+    public function add(TaskerRequest $taskerRequest)
     {
-        $tasker = $request->validate([
-            'full_name' => 'required',
-            'email' => 'required',
-            'work_time' => 'required',
-        ]);
-        $tasker = Tasker::create($tasker);
+        $tasker = Tasker::create($taskerRequest->except('profile'));
+//        $token = $tasker -> createToken('Api/AdminLogin');
+        $tasker_profile_url = Storage::putFile('/tasker', $taskerRequest->profile);
+        $tasker->update(['profile'=>$tasker_profile_url]);
+        $taskerInfo = Tasker::find($tasker->id);
         return response()->json([
-            'tasker' => $tasker,
+            ',message' => 'Tasker created successfully',
+            'tasker' => new TaskerResource($taskerInfo),
         ],200);
     }
 
